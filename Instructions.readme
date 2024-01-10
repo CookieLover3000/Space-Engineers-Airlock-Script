@@ -1,0 +1,21 @@
+﻿R e a d m e
+-----------
+
+This script has three commands:
+ - Add : For if you need to add an Airlock.
+ - Delete : Will delete all of your Airlocks.
+ - Cycle : Cycles the airlock, you will need to specify the number.
+	Example: "Cycle 1", This will Cycle Airlock 1
+
+
+To create an airlock you need two doors and an air vent between them. 
+You will also need an oxygen tank connected to the same conveyor network as the air vent. 
+You will not have to add a new oxygen tank for every new airlock.
+
+To create airlock 1
+Add "[Airlock 1] [Inner]" to the name of the door on the inside of your airlock.
+Add "[Airlock 1] [Outer]" to the name of the door on the Outside of your airlock.
+Add "[Airlock 1]" to the name of the Air vent of your airlock.
+Add "[Airlock]" to the name of the Oxygen Tank (you will not have to do this one again after this).
+
+If you want to, you can change these variables below.
