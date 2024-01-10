@@ -6,7 +6,8 @@ This script has three commands:
  - Delete : Will delete all of your Airlocks.
  - Cycle : Cycles the airlock, you will need to specify the number.
 	Example: "Cycle 1", This will Cycle Airlock 1
-
+ - "Cycle Out": Cycles the Airlock so the outside door is open.
+ - "Cycle in": Cycles the Airlock so the inside door is open.
 
 To create an airlock you need two doors and an air vent between them. 
 You will also need an oxygen tank connected to the same conveyor network as the air vent. 

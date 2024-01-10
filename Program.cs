@@ -52,6 +52,8 @@ namespace IngameScript
             _commands["add"] = CreateAirlock;
             _commands["Cycle"] = Cycle;
             _commands["delete"] = DeleteAirlocks;
+            _commands["Cycle Out"] = CycleOut;
+            _commands["Cycle in"] = CycleIn;
             Runtime.UpdateFrequency = UpdateFrequency.Update100;
             CreateAirlock();
         }
@@ -184,6 +186,54 @@ namespace IngameScript
             if (specificAirlock != null)
             {
                 specificAirlock.Cycle();
+            }
+            else
+                Echo($"Cannot find Airlock {argument}");
+        }
+
+        public void CycleOut()
+        {
+            cycling = true;
+            string argument = _commandLine.Argument(1);
+            int airlockID = -1;
+
+            try
+            {
+                // Convert string to int.
+                int.TryParse(argument, out airlockID);
+            }
+            catch
+            {
+                Echo($"Cannot find airlock {argument}");
+            }
+            Airlock specificAirlock = Airlocks.FirstOrDefault(airlock => airlock.ID == airlockID);
+            if (specificAirlock != null)
+            {
+                specificAirlock.CycleOut();
+            }
+            else
+                Echo($"Cannot find Airlock {argument}");
+        }
+
+        public void CycleIn()
+        {
+            cycling = true;
+            string argument = _commandLine.Argument(1);
+            int airlockID = -1;
+
+            try
+            {
+                // Convert string to int.
+                int.TryParse(argument, out airlockID);
+            }
+            catch
+            {
+                Echo($"Cannot find airlock {argument}");
+            }
+            Airlock specificAirlock = Airlocks.FirstOrDefault(airlock => airlock.ID == airlockID);
+            if (specificAirlock != null)
+            {
+                specificAirlock.CycleIn();
             }
             else
                 Echo($"Cannot find Airlock {argument}");
